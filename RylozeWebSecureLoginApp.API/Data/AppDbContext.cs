@@ -12,5 +12,16 @@ namespace RylozeWebSecureLoginApp.API.Data
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<AppRole>().HasData(
+                new AppRole { Id = 1, Name = "Admin", NormalizedName = "ADMIN" },
+                new AppRole { Id = 2, Name = "Antranor", NormalizedName = "ANTRANOR" },
+                new AppRole { Id = 3, Name = "Ogrenci", NormalizedName = "ÖĞRENCİ" }
+            );
+        }
     }
 }
