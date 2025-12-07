@@ -1,0 +1,6 @@
+@RylozeWebSecureLoginApp.API_HostAddress = http://localhost:5255
+
+GET {{RylozeWebSecureLoginApp.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
